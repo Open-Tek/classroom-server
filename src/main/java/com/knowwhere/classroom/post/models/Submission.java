@@ -1,6 +1,6 @@
 package com.knowwhere.classroom.post.models;
 
-import com.knowwhere.classroom.filepath.models.SubmissionFilePaths;
+import com.knowwhere.classroom.post.models.SubmissionFilePaths;
 import com.knowwhere.classroom.post.models.Post;
 import com.knowwhere.classroom.user.models.BaseUser;
 import com.knowwhere.classroom.utils.BaseEntity;

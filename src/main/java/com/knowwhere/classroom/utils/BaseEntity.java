@@ -20,12 +20,15 @@ import java.util.Date;
 @MappedSuperclass
 public abstract class BaseEntity {
 
+    @JsonIgnore
     @CreatedDate
     private Date createdDate;
 
+    @JsonIgnore
     @LastModifiedDate
     private Date updatedDate;
 
+    @JsonIgnore
     @Version
     private Long version = 1L;
 

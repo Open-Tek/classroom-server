@@ -34,6 +34,7 @@ public class BaseUser extends BaseEntity {
     @Column(unique = true, length = 10, nullable = false)
     private String phone;
 
+    @JsonIgnore
     @OneToMany(
             orphanRemoval = true,
             cascade = CascadeType.ALL,
@@ -42,6 +43,7 @@ public class BaseUser extends BaseEntity {
     )
     private Set<UserClassesSubscription> learningClasses;
 
+    @JsonIgnore
     @OneToMany(
             orphanRemoval = true,
             cascade = CascadeType.ALL,

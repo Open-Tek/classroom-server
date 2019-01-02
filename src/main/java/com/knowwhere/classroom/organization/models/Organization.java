@@ -33,7 +33,7 @@ public class Organization extends BaseEntity {
 
     private String address;
 
-
+    @JsonIgnore
     @OneToMany(
             cascade = CascadeType.ALL,
             mappedBy = "organization",
@@ -45,7 +45,7 @@ public class Organization extends BaseEntity {
     @OneToOne(fetch = FetchType.LAZY)
     private BaseUser baseUser;
 
-
+    @JsonIgnore
     @OneToMany(
             cascade = CascadeType.ALL,
             mappedBy = "organization",

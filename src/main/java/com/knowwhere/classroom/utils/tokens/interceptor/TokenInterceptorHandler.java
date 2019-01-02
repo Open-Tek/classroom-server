@@ -24,7 +24,7 @@ public class TokenInterceptorHandler extends HandlerInterceptorAdapter {
         String authHeader = request.getHeader(AUTH_HEADER_CONST);
         if(!request.getDispatcherType().toString().equals("REQUEST"))
             return true;
-
+        System.out.println(request.getRequestURI());
         BaseUser user = this.tokenService.getUserByToken(authHeader);
         if( authHeader == null || user == null )
             try{

@@ -32,6 +32,7 @@ public class Classes extends BaseEntity {
     @Column(length = 50)
     private String title;
 
+    @JsonIgnore
     @NaturalId
     @Column(nullable = false, unique = true)
     private String classroomCode;
@@ -44,6 +45,7 @@ public class Classes extends BaseEntity {
      */
     private int state;
 
+    @JsonIgnore
     @OneToMany(
             cascade = CascadeType.ALL,
             mappedBy = "student",
@@ -51,6 +53,7 @@ public class Classes extends BaseEntity {
     )
     private Set<UserClassesSubscription> students;
 
+    @JsonIgnore
     @OneToMany(
             cascade = CascadeType.ALL,
             mappedBy = "classes",
@@ -59,10 +62,10 @@ public class Classes extends BaseEntity {
     private Set<OrgTeacherClasses> teachers;
 
     @JsonIgnore
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     private Organization organization;
 
-
+    @JsonIgnore
     @OneToMany(
             mappedBy = "classes",
             orphanRemoval = true,
